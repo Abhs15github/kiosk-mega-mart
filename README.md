@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KIOSK Mega Mart - Official Website
+
+A modern, responsive Next.js website for KIOSK Mega Mart, your trusted neighbourhood departmental store in Sector 57, Gurugram.
+
+## Features
+
+- **Fully Responsive Design** - Optimized for mobile, tablet, and desktop devices
+- **Mobile-First Approach** - Sticky WhatsApp and Call buttons for easy ordering on mobile
+- **SEO Optimized** - Complete meta tags, Open Graph, and Twitter cards
+- **Fast Performance** - Built with Next.js 14+ App Router and optimized images
+- **Modern UI/UX** - Clean design with Tailwind CSS and smooth animations
+- **WhatsApp Integration** - One-click ordering via WhatsApp
+- **Google Maps Integration** - Easy navigation to store location
+
+## Tech Stack
+
+- **Framework**: Next.js 14+ (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Font**: Inter (Google Fonts)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository or navigate to the project directory:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd kiosk-mega-mart
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+kiosk-mega-mart/
+├── app/
+│   ├── layout.tsx       # Root layout with metadata
+│   ├── page.tsx         # Home page
+│   └── globals.css      # Global styles
+├── components/
+│   ├── Hero.tsx         # Hero section
+│   ├── WhatWeOffer.tsx  # Categories section
+│   ├── HowToOrder.tsx   # Order process section
+│   ├── LocationTimings.tsx # Location and store info
+│   ├── Footer.tsx       # Footer with CTA
+│   └── StickyButtons.tsx # Mobile sticky buttons
+└── public/              # Static assets
+```
+
+## Contact Information
+
+- **Phone**: 9811339376, 9625783541
+- **Address**: Shop No. 10, BESTECH Square Mall, LG 9-10-11, Sector 57, Gurugram
+- **Hours**: 10:00 AM – 10:00 PM (Daily)
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## License
+
+© 2024 KIOSK Mega Mart. All rights reserved.
