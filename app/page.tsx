@@ -1,3 +1,4 @@
+import SplashScreen from '@/components/SplashScreen';
 import Hero from '@/components/Hero';
 import WhatWeOfferEnhanced from '@/components/WhatWeOfferEnhanced';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -11,17 +12,20 @@ import StickyButtons from '@/components/StickyButtons';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <WhatWeOfferEnhanced />
-      <WhyChooseUs />
-      <HowToOrder />
-      <Testimonials />
-      <DeliveryAreas />
-      <FAQ />
-      <LocationTimings />
-      <Footer />
-      <StickyButtons />
-    </main>
+    <>
+      <SplashScreen />
+      <main className="min-h-screen">
+        <Hero />
+        <WhatWeOfferEnhanced />
+        <WhyChooseUs />
+        <HowToOrder />
+        <Testimonials />
+        <DeliveryAreas />
+        <FAQ />
+        <LocationTimings />
+        <Footer />
+        <StickyButtons />
+      </main>
+    </>
   );
 }
