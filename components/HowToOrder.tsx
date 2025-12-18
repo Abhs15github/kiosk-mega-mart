@@ -7,27 +7,21 @@ const steps = [
     title: "Message or Call Us",
     description: "Contact us on WhatsApp or phone to start your order",
     detailedDescription: "Reach out to us anytime during store hours. Our friendly team is ready to help!",
-    contacts: ["9811339376", "9625783541"],
-    color: "from-primary-500 to-primary-600",
-    lightColor: "from-primary-100 to-primary-200"
+    contacts: ["9811339376", "9625783541"]
   },
   {
     icon: ClipboardList,
     number: "2",
     title: "Share Your Grocery List",
     description: "Send your required items via WhatsApp or tell us over a call",
-    detailedDescription: "Simply share what you need - we'll take care of the rest and confirm availability.",
-    color: "from-primary-500 to-primary-600",
-    lightColor: "from-primary-100 to-primary-200"
+    detailedDescription: "Simply share what you need - we'll take care of the rest and confirm availability."
   },
   {
     icon: ShoppingBag,
     number: "3",
     title: "Get Fresh Groceries",
     description: "We prepare your order with care and ensure fresh, reliable products",
-    detailedDescription: "Your groceries are handpicked, packed with care, and ready for delivery or pickup!",
-    color: "from-primary-500 to-primary-600",
-    lightColor: "from-primary-100 to-primary-200"
+    detailedDescription: "Your groceries are handpicked, packed with care, and ready for delivery or pickup!"
   }
 ];
 
@@ -44,87 +38,71 @@ export default function HowToOrder() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100/30 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100/30 rounded-full blur-3xl -z-10"></div>
-
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-primary-50/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-block bg-primary-100 text-primary-700 px-5 py-2 rounded-full text-sm font-bold mb-5 tracking-wide">
             SIMPLE & QUICK
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-5">
             How to Order
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ordering from <span className="text-primary-600 font-bold">KIOSK Mega Mart</span> is quick, easy, and hassle-free.
-            <span className="block mt-2 text-base sm:text-lg text-gray-500">Just 3 simple steps to get fresh groceries!</span>
+          <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            Ordering from <span className="text-primary-600 font-black">KIOSK Mega Mart</span> is quick, easy, and hassle-free.
+          </p>
+          <p className="text-base sm:text-lg text-gray-600 mt-3 font-medium">
+            Just 3 simple steps to get fresh groceries!
           </p>
         </div>
 
-        {/* Steps with Enhanced Design */}
-        <div className="max-w-6xl mx-auto mb-12 sm:mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 relative">
-            {/* Connector Lines (Desktop Only) */}
-            <div className="hidden md:block absolute top-24 left-0 right-0 px-32">
-              <div className="flex items-center justify-between">
-                <div className="flex-1 h-1 bg-gradient-to-r from-primary-300 via-primary-400 to-primary-300 relative">
-                  <ArrowRight className="absolute -right-3 -top-3 w-7 h-7 text-primary-500" />
-                </div>
-                <div className="w-32"></div>
-                <div className="flex-1 h-1 bg-gradient-to-r from-primary-300 via-primary-400 to-primary-300 relative">
-                  <ArrowRight className="absolute -right-3 -top-3 w-7 h-7 text-primary-500" />
-                </div>
-              </div>
-            </div>
-
+        {/* Steps Grid */}
+        <div className="max-w-7xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
                 <div key={index} className="relative">
                   {/* Card */}
-                  <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-primary-100 hover:border-primary-300 z-10 h-full">
-                    {/* Number Badge - Larger and More Prominent */}
-                    <div className={`absolute -top-5 -right-5 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-2xl sm:text-3xl shadow-xl ring-4 ring-white transform rotate-6 hover:rotate-0 transition-transform duration-300`}>
-                      {step.number}
+                  <div className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 h-full">
+                    {/* Number Badge */}
+                    <div className="absolute -top-4 -right-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-xl">
+                      <span className="text-white font-black text-3xl">{step.number}</span>
                     </div>
 
-                    {/* Icon - Larger with Light Background */}
-                    <div className="relative mb-6">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${step.lightColor} rounded-3xl blur-xl opacity-50`}></div>
-                      <div className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br ${step.color} flex items-center justify-center mx-auto shadow-lg`}>
-                        <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" strokeWidth={2} />
-                      </div>
+                    {/* Icon */}
+                    <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                      <Icon className="w-12 h-12 text-white" strokeWidth={2.5} />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 text-center leading-tight">
+                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 text-center">
                       {step.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-2">
+                    <p className="text-base lg:text-lg text-gray-700 text-center leading-relaxed mb-3 font-medium">
                       {step.description}
                     </p>
 
                     {/* Detailed Description */}
-                    <p className="text-xs sm:text-sm text-primary-600 text-center leading-relaxed font-medium">
+                    <p className="text-sm lg:text-base text-primary-600 text-center leading-relaxed font-semibold">
                       {step.detailedDescription}
                     </p>
 
                     {/* Contact Numbers (for first step only) */}
                     {step.contacts && (
-                      <div className="mt-5 pt-5 border-t-2 border-primary-100 space-y-2">
-                        <p className="text-xs text-gray-500 text-center mb-3 font-semibold">Call us now:</p>
+                      <div className="mt-6 pt-6 border-t-2 border-gray-200 space-y-3">
+                        <p className="text-sm text-gray-600 text-center mb-3 font-bold uppercase tracking-wide">
+                          Call us now:
+                        </p>
                         {step.contacts.map((contact, idx) => (
                           <a
                             key={idx}
                             href={`tel:+91${contact}`}
-                            className="flex items-center justify-center gap-2 text-center text-primary-600 font-bold text-base sm:text-lg hover:text-primary-700 transition-colors bg-primary-50 hover:bg-primary-100 rounded-xl py-2 px-4"
+                            className="flex items-center justify-center gap-2 text-primary-600 font-black text-lg lg:text-xl hover:text-primary-700 transition-colors bg-primary-50 hover:bg-primary-100 rounded-2xl py-3 px-5"
                           >
-                            <Phone className="w-4 h-4" />
+                            <Phone className="w-5 h-5" strokeWidth={3} />
                             {contact}
                           </a>
                         ))}
@@ -132,10 +110,17 @@ export default function HowToOrder() {
                     )}
                   </div>
 
+                  {/* Arrow Connector (Desktop) */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/3 -right-5 lg:-right-6 z-10">
+                      <ArrowRight className="w-10 h-10 lg:w-12 lg:h-12 text-primary-500" strokeWidth={3} />
+                    </div>
+                  )}
+
                   {/* Mobile Arrow */}
                   {index < steps.length - 1 && (
-                    <div className="md:hidden flex justify-center my-4">
-                      <ArrowRight className="w-8 h-8 text-primary-500 transform rotate-90" />
+                    <div className="md:hidden flex justify-center my-6">
+                      <ArrowRight className="w-10 h-10 text-primary-500 transform rotate-90" strokeWidth={3} />
                     </div>
                   )}
                 </div>
@@ -145,52 +130,53 @@ export default function HowToOrder() {
         </div>
 
         {/* Benefits Bar */}
-        <div className="max-w-5xl mx-auto mb-12">
-          <div className="bg-gradient-to-r from-primary-600 via-green-600 to-emerald-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="bg-gradient-to-r from-primary-600 via-green-600 to-emerald-600 rounded-3xl p-8 lg:p-10 shadow-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-2 sm:gap-3 text-white">
-                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" strokeWidth={2.5} />
-                  <span className="text-sm sm:text-base font-semibold leading-tight">{benefit}</span>
+                <div key={index} className="flex items-center gap-3 text-white">
+                  <CheckCircle2 className="w-7 h-7 flex-shrink-0" strokeWidth={3} />
+                  <span className="text-base lg:text-lg font-bold">{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Enhanced CTA Section */}
-        <div className="text-center">
-          <div className="inline-block bg-white rounded-3xl sm:rounded-[2rem] p-8 sm:p-10 shadow-2xl border-2 border-primary-200 max-w-3xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+        {/* CTA Section */}
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="bg-white rounded-[2.5rem] p-10 lg:p-12 shadow-2xl border-2 border-primary-100">
+            <h3 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
               Ready to Order?
             </h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl text-gray-700 mb-8 font-medium">
               Start ordering now and get fresh groceries delivered to your doorstep!
             </p>
 
-            {/* Dual CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary-600 to-green-600 text-white px-8 sm:px-10 py-4 rounded-full font-bold text-base sm:text-lg hover:from-primary-700 hover:to-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary-600 to-green-600 text-white px-10 py-5 rounded-full font-black text-lg hover:from-primary-700 hover:to-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
               >
-                <ShoppingCart className="w-6 h-6" strokeWidth={2.5} />
+                <ShoppingCart className="w-6 h-6" strokeWidth={3} />
                 Order on WhatsApp
               </a>
 
               <a
                 href="tel:+919811339376"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-primary-600 px-8 sm:px-10 py-4 rounded-full font-bold text-base sm:text-lg border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-primary-600 px-10 py-5 rounded-full font-black text-lg border-3 border-primary-600 hover:bg-primary-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                style={{ borderWidth: '3px' }}
               >
-                <Phone className="w-6 h-6" strokeWidth={2.5} />
+                <Phone className="w-6 h-6" strokeWidth={3} />
                 Call Us Now
               </a>
             </div>
 
-            {/* Additional Info */}
-            <p className="text-sm text-gray-500 mt-6">
+            {/* Store Hours */}
+            <p className="text-base text-gray-600 mt-8 font-bold">
               Available Mon-Sun: 8:00 AM - 11:00 PM
             </p>
           </div>

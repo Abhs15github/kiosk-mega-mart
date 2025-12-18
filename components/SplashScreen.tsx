@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Store } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
@@ -37,86 +37,82 @@ export default function SplashScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-primary-600 via-green-600 to-emerald-700 transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-primary-600 via-green-600 to-emerald-600 transition-opacity duration-500 ${
         isAnimating ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
+            backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)',
+            backgroundSize: '50px 50px',
           }}
         ></div>
       </div>
 
-      {/* Decorative Circles */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-white/20 rounded-full blur-3xl animate-pulse"></div>
-      <div
-        className="absolute bottom-20 left-20 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: '1s' }}
-      ></div>
-
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4">
-        {/* Store Icon with Animation */}
-        <div className="mb-8 flex justify-center">
+      <div className="relative z-10 text-center px-6 w-full max-w-2xl">
+        {/* Icon with Modern Animation */}
+        <div className="mb-8 sm:mb-10 flex justify-center">
           <div className="relative">
-            {/* Pulsing Rings */}
-            <div className="absolute inset-0 rounded-full bg-white/30 animate-ping"></div>
+            {/* Animated Rings */}
+            <div className="absolute inset-0 w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white/20 animate-ping"></div>
             <div
-              className="absolute inset-0 rounded-full bg-white/20 animate-ping"
-              style={{ animationDelay: '0.3s' }}
+              className="absolute inset-0 w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white/30 animate-pulse"
             ></div>
 
-            {/* Icon Container */}
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl animate-bounce">
-              <Store className="w-12 h-12 sm:w-16 sm:h-16 text-primary-600" />
+            {/* Icon Container with Gradient */}
+            <div className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 bg-white rounded-3xl flex items-center justify-center shadow-2xl transform transition-transform duration-700 hover:scale-105">
+              <ShoppingBag className="w-14 h-14 xs:w-16 xs:h-16 sm:w-20 sm:h-20 text-primary-600" strokeWidth={2.5} />
             </div>
           </div>
         </div>
 
-        {/* Brand Name */}
-        <div className="mb-4 animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-2 drop-shadow-lg animate-slide-up">
+        {/* Brand Name - Optimized for Mobile */}
+        <div className="mb-6 space-y-2 sm:space-y-3">
+          <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white drop-shadow-2xl leading-none tracking-tight animate-slide-up">
             KIOSK
           </h1>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-lg animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl leading-none tracking-tight animate-slide-up-delay">
             Mega Mart
-          </h1>
-          <div className="h-2 w-48 sm:w-64 bg-white rounded-full mx-auto mt-4 shadow-lg animate-scale-in"></div>
+          </h2>
+
+          {/* Decorative Underline */}
+          <div className="flex justify-center mt-4 sm:mt-6">
+            <div className="h-1.5 sm:h-2 w-32 xs:w-40 sm:w-56 md:w-64 bg-white rounded-full shadow-xl animate-scale-in"></div>
+          </div>
         </div>
 
-        {/* Tagline */}
-        <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-semibold mt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        {/* Tagline - Mobile Optimized */}
+        <p className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-bold mt-6 sm:mt-8 drop-shadow-lg animate-fade-in-delay leading-relaxed px-4">
           Fresh Groceries & Daily Essentials
         </p>
 
-        {/* Loading Animation */}
-        <div className="mt-8 flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <div className="w-3 h-3 bg-white rounded-full animate-bounce"></div>
-          <div className="w-3 h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-          <div className="w-3 h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        {/* Location Badge */}
+        <div className="mt-4 sm:mt-6 animate-fade-in-delay-2">
+          <div className="inline-block bg-white/20 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 border-white/30">
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-bold">
+              Sector 57, Gurugram
+            </p>
+          </div>
+        </div>
+
+        {/* Loading Dots */}
+        <div className="mt-8 sm:mt-10 flex justify-center gap-2 sm:gap-3 animate-fade-in-delay-3">
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-bounce shadow-lg"></div>
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-bounce shadow-lg" style={{ animationDelay: '0.1s' }}></div>
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-bounce shadow-lg" style={{ animationDelay: '0.2s' }}></div>
         </div>
       </div>
 
-      {/* Custom CSS for animations */}
+      {/* Custom Animations */}
       <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
         @keyframes slide-up {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -135,17 +131,48 @@ export default function SplashScreen() {
           }
         }
 
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
 
         .animate-slide-up {
-          animation: slide-up 0.8s ease-out forwards;
+          animation: slide-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          opacity: 0;
+        }
+
+        .animate-slide-up-delay {
+          animation: slide-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 0.2s;
+          opacity: 0;
         }
 
         .animate-scale-in {
-          animation: scale-in 0.8s ease-out forwards;
-          animation-delay: 0.4s;
+          animation: scale-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 0.5s;
+          opacity: 0;
+        }
+
+        .animate-fade-in-delay {
+          animation: fade-in 0.8s ease-out forwards;
+          animation-delay: 0.7s;
+          opacity: 0;
+        }
+
+        .animate-fade-in-delay-2 {
+          animation: fade-in 0.8s ease-out forwards;
+          animation-delay: 0.9s;
+          opacity: 0;
+        }
+
+        .animate-fade-in-delay-3 {
+          animation: fade-in 0.8s ease-out forwards;
+          animation-delay: 1.1s;
+          opacity: 0;
         }
       `}</style>
     </div>
